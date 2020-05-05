@@ -8,6 +8,8 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; //Avoid DEPTH_ZERO_SELF_SIGNED_CERT error. Not secure for use in production
+
 const db = knex ({
     client: 'pg',
     connection: {
